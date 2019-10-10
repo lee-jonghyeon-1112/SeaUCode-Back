@@ -10,6 +10,7 @@ const stylus = require('stylus');
 const mongoose = require('mongoose');
 const uri = require('./uri.js');
 const secret_key = require('./secret_key');
+const cors = require('cors');
 
 
 /* ----
@@ -25,6 +26,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 app.set('jwt-secret', secret_key.key);
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
