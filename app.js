@@ -16,6 +16,7 @@ const secret_key = require('./secret_key');
  TODO: 새로운 라우터경로를 추가해주십시오. */
 const registerRouter = require('./routes/api/user_handling/register');
 const loginRouter = require('./routes/api/login');
+const loginTest = require('./routes/logintest');
 
 const app = express();
 
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
+app.use('/login-test', loginTest);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
