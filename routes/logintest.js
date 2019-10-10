@@ -14,3 +14,5 @@ router.use(auth);
 router.get('/', function(req, res, next) {
     res.status(200).send({message: 'success'});
 });
+
+module.exports = router;
