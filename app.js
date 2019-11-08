@@ -15,6 +15,7 @@ const cors = require('cors'); // TODO: CORS 를 지우십시오.
 const registerRouter = require('./routes/api/user_handling/register');
 const loginRouter = require('./routes/api/login');
 const logedinRouter = require('./routes/api/logedin');
+const classcreateRouter = require('./routes/api/class/createClass');
 
 const app = express();
 
@@ -35,6 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/logedin', logedinRouter);
+app.use('/class/createClass',classcreateRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
